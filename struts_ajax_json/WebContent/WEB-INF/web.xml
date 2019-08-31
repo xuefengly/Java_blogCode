@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>struts_ajax_json</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+ <!-- 配置Strust2的核心过滤器 -->
+  <!-- 预处理的时候，即访问url地址的时候 -->
+  <filter>
+  	<filter-name>struts-prepare</filter-name>
+  	<filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>struts-prepare</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- 执行的时候，或者说完成业务逻辑代码返回的时候 -->
+  <filter>
+  	<filter-name>struts-execute</filter-name>
+  	<filter-class>org.apache.struts2.dispatcher.filter.StrutsExecuteFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>struts-execute</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+</web-app>

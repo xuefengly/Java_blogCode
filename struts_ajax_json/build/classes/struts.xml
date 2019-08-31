@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts 
+			PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" 
+			"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<!-- 设置编码格式 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<!-- 设置访问时的后缀 -->
+	<!-- <constant name="struts.action.extension" value="action"/> -->
+	<!-- 自动加载struts修改后的配置文件 -->
+	<constant name="struts.configuration.xml.reload" value="true"/>
+	<!-- 打印出详细的错误信息 -->
+	<constant name="struts.devMode" value="true"/>
+	
+	<!-- 开启动态访问模式 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	
+	<!-- Struts的对象交由spring来管理 -->
+	<constant name="struts.objectFactory.spring.autoWire.alwaysRespect" value="true"/>
+	
+	<package name="aaa" namespace="/" extends="struts-default,json-default" >
+        <action name="ajaxJson" class="struts_ajax_json.XXXAction" method="ajaxJsonMethod">
+            <result type="json">
+            	<param name="root">data</param>
+            </result>
+        </action>
+    </package>
+</struts>
